@@ -47,7 +47,7 @@ export type StoryBeat = {
   isPivot?: boolean;
 };
 
-export type StoryTakeaway = {
+export type Takeaway = {
   number: string;
   headline: string;
   body: string;
@@ -58,11 +58,21 @@ export type Speaker = {
   role: string;
   bio: string;
   initials: string;
+  linkedinUrl?: string;
+  linkedinLabel?: string;
+  emailUrl?: string;
+  emailLabel?: string;
 };
 
 export type LectureSlide = {
   file: string;
   caption: string;
+};
+
+export type BuildCredit = {
+  label: string;
+  value: string;
+  url?: string;
 };
 
 export type Content = {
@@ -71,6 +81,16 @@ export type Content = {
   nav: {
     skipToContent: string;
     backToTop: string;
+  };
+  topNav: {
+    brand: string;
+    links: {
+      toolkit: string;
+      lecture: string;
+      who: string;
+    };
+    menuLabel: string;
+    closeLabel: string;
   };
   hero: {
     tag: string;
@@ -83,15 +103,12 @@ export type Content = {
     receiptLinkLabel: string;
     cta: string;
   };
-  story: {
+  why: {
     tag: string;
     meta: string;
     title: string;
     intro: string;
-    beats: StoryBeat[];
-    takeawaysLabel: string;
-    takeaways: StoryTakeaway[];
-    readFullLabel: string;
+    takeaways: Takeaway[];
   };
   poc: {
     tag: string;
@@ -128,17 +145,6 @@ export type Content = {
     featured: Tool;
     supporting: Tool[];
   };
-  speakers: {
-    tag: string;
-    meta: string;
-    title: string;
-    intro: string;
-    talkTitle: string;
-    list: Speaker[];
-    readFullLabel: string;
-    watchUxiLabel: string;
-    watchUxiUrl: string;
-  };
   services: {
     tag: string;
     meta: string;
@@ -150,6 +156,21 @@ export type Content = {
     bioBody: string;
     cta: string;
     linkedin: string;
+  };
+  who: {
+    tag: string;
+    meta: string;
+    title: string;
+    intro: string;
+    talkTitle: string;
+    list: Speaker[];
+    creditsLabel: string;
+    creditsIntro: string;
+    credits: BuildCredit[];
+    watchUxiLabel: string;
+    watchUxiUrl: string;
+    backLabel: string;
+    lectureLabel: string;
   };
   footer: {
     credits: string;
@@ -167,6 +188,10 @@ export type Content = {
     kicker: string;
     talkTitle: string;
     speakersLine: string;
+    journeyLabel: string;
+    journeyTitle: string;
+    journeyIntro: string;
+    beats: StoryBeat[];
     slidesLabel: string;
     slides: LectureSlide[];
     slidesPlaceholder: string;
@@ -174,5 +199,6 @@ export type Content = {
     transcriptParagraphs: string[];
     watchUxiLabel: string;
     watchUxiUrl: string;
+    whoLabel: string;
   };
 };

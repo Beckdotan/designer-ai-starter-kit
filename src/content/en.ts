@@ -7,6 +7,16 @@ export const en: Content = {
     skipToContent: 'Skip to content',
     backToTop: 'Back to top',
   },
+  topNav: {
+    brand: 'UXI · 2026',
+    links: {
+      toolkit: 'Toolkit',
+      lecture: 'Lecture',
+      who: 'Who',
+    },
+    menuLabel: 'Menu',
+    closeLabel: 'Close',
+  },
   hero: {
     tag: '§ 00',
     meta: 'UXI 2026 — NETA + DOTAN',
@@ -19,64 +29,12 @@ export const en: Content = {
     receiptLinkLabel: 'CLAUDE CODE',
     cta: 'Press to start',
   },
-  story: {
+  why: {
     tag: '§ 01',
-    meta: '~3 WEEKS · IDEA → PRODUCTION · 5 BEATS',
-    title: 'How this kit got built.',
+    meta: 'FROM OUR UXI TALK · 4 IDEAS',
+    title: 'Why we built this.',
     intro:
-      'Before the toolkit, the talk. A 3-week timeline — from one designer’s hunch to a shipped product — that explains why this page exists at all.',
-    beats: [
-      {
-        number: '01',
-        headline: 'The idea — one button.',
-        shortLabel: 'Idea',
-        body:
-          'August 2025: Google ships Nano Banana — image quality we hadn’t seen. The promise was clean: *what you imagine, you get.* The catch: only if you know how to ask. The designer move is to make the phrasing disappear. No prompt box. One shutter button. A hunch.',
-        quote: 'כמה מטופש — ככה פשוט.',
-        quoteAttribution: 'Neta',
-        quoteLang: 'he',
-        phase: 'guerrilla',
-      },
-      {
-        number: '02',
-        headline: 'Prototyping the feel.',
-        shortLabel: 'Prototyping',
-        body:
-          'Built in an afternoon. Two birds, one stone: user-testing the experience *and* rehearsing the pitch — walking the hallway with the mock, catching people between meetings. The prototype answered the shape of the experience, not whether the model could hold up.',
-        phase: 'guerrilla',
-      },
-      {
-        number: '03',
-        headline: 'Real photos in. Real results out.',
-        shortLabel: 'Real results',
-        body:
-          'Someone mentions AI Studio. Under an hour later, a working POC: real photos in, real output. Not a simulation. The first pass wasn’t quite there — the model kept altering lighting — but reading the docs together Neta and Dotan found the unlock: positive framing, a self-check step. Those rules became the spine of [§ 04 on this page](#principles).',
-        quote:
-          'זה כבר לא רעיון בראש שלי. זו כבר לא מצגת. זה משהו שעובד.',
-        quoteAttribution: 'Neta',
-        quoteLang: 'he',
-        phase: 'guerrilla',
-      },
-      {
-        number: '04',
-        headline: 'CPO approves.',
-        shortLabel: 'CPO approves',
-        isPivot: true,
-      },
-      {
-        number: '05',
-        headline: 'Guerrilla → real project.',
-        shortLabel: 'Real project',
-        body:
-          'PM assigned, priorities set, validations, data, iteration. Three weeks, total — from that morning-idea to a production build. Few resources. People helping “on the side.” The process looked nothing like the usual — no wireframes, no Figma handoff — but the output was there.',
-        quote:
-          'מהרגע הזה הפרויקט הוא כבר לא פרויקט גרילה — הוא פרויקט מסודר.',
-        quoteAttribution: 'Dotan',
-        quoteLang: 'he',
-        phase: 'product',
-      },
-    ],
-    takeawaysLabel: 'WHAT WE TOOK HOME',
+      'Four ideas from our UXI 2026 talk on designing with AI. The rest of this page turns them into tools you can use today.',
     takeaways: [
       {
         number: '01',
@@ -103,10 +61,9 @@ export const en: Content = {
           'Deep user understanding, product thinking, working with teams. The rest — like prompt engineering — can be learned. That’s what the rest of this page is for.',
       },
     ],
-    readFullLabel: 'Read the full talk →',
   },
   poc: {
-    tag: '§ 03',
+    tag: '§ 02',
     meta: '5 STEPS — ~1 HOUR',
     title: 'Build your first POC in an hour.',
     intro:
@@ -150,7 +107,7 @@ export const en: Content = {
     ],
   },
   principles: {
-    tag: '§ 04',
+    tag: '§ 03',
     meta: '9 PRINCIPLES',
     title: 'Prompt engineering essentials.',
     intro:
@@ -267,7 +224,7 @@ respects its word limit.
     copiedLabel: 'COPIED ✓',
   },
   models: {
-    tag: '§ 05',
+    tag: '§ 04',
     meta: '3 OFFICIAL GUIDES',
     title: 'Going deeper — model-specific guides.',
     intro:
@@ -300,7 +257,7 @@ respects its word limit.
     ],
   },
   tools: {
-    tag: '§ 06',
+    tag: '§ 05',
     meta: '1 FEATURED + 5 SUPPORTING',
     title: 'Vibe coding: tools to build fast.',
     intro:
@@ -353,37 +310,8 @@ respects its word limit.
       },
     ],
   },
-  speakers: {
-    tag: '§ 02',
-    meta: 'THE SPEAKERS',
-    title: 'Who gave the talk.',
-    intro:
-      'Neta Keret and Dotan Beck, both at Lightricks. The lecture is on UXI Live; the transcript lives here.',
-    talkTitle:
-      'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
-    list: [
-      {
-        name: 'Neta Keret',
-        role: 'Product Design Team Lead, Facetune — Lightricks',
-        bio:
-          'Leads product design for Facetune, focused on holistic, data-driven experiences for the app’s end users.',
-        initials: 'NK',
-      },
-      {
-        name: 'Dotan Beck',
-        role: 'AI Labs Team Lead & LLM Engineer — Lightricks',
-        bio:
-          'Drives product-tech strategy for generative AI across Lightricks, shipping at the scale of millions of users.',
-        initials: 'DB',
-      },
-    ],
-    readFullLabel: 'Read the full talk →',
-    watchUxiLabel: 'Talk page on UXI Live →',
-    watchUxiUrl:
-      'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
-  },
   services: {
-    tag: '§ 07',
+    tag: '§ 06',
     meta: 'DOTAN BECK — SOLO',
     title: 'Lectures & workshops on integrating AI into products and day-to-day work.',
     intro:
@@ -415,6 +343,53 @@ respects its word limit.
     cta: "Let's connect on LinkedIn",
     linkedin: 'https://www.linkedin.com/in/dotanbeck/',
   },
+  who: {
+    tag: '§ WHO',
+    meta: 'BUILDERS · TALKERS',
+    title: 'We gave the talk. We built this page. Same afternoon.',
+    intro:
+      'Two product people at Lightricks, betting that the designer’s job now includes actually building the thing. This page is the proof of work.',
+    talkTitle:
+      'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
+    list: [
+      {
+        name: 'Neta Keret',
+        role: 'Product Design Team Lead, Facetune — Lightricks',
+        bio:
+          'Leads product design for Facetune, focused on holistic, data-driven experiences for the app’s end users. Neta started the project that became the talk — the morning-idea that grew into a shipped product in three weeks.',
+        initials: 'NK',
+        linkedinUrl: 'https://www.linkedin.com/in/netakeret/',
+        linkedinLabel: 'LINKEDIN ↗',
+      },
+      {
+        name: 'Dotan Beck',
+        role: 'AI Labs Team Lead & LLM Engineer — Lightricks',
+        bio:
+          'Drives product-tech strategy for generative AI across Lightricks, shipping at the scale of millions of users. Dotan joined the project as the prompt engineer, teaching the designers to write the rules — and vibe-coded this page in an afternoon.',
+        initials: 'DB',
+        linkedinUrl: 'https://www.linkedin.com/in/dotanbeck/',
+        linkedinLabel: 'LINKEDIN ↗',
+      },
+    ],
+    creditsLabel: 'WHAT WE USED',
+    creditsIntro:
+      'The medium is the message. Here is the actual stack — nothing hidden, nothing heroic.',
+    credits: [
+      { label: 'CODE AGENT', value: 'Claude Code' },
+      { label: 'STACK', value: 'Vite · React · TypeScript · Tailwind' },
+      { label: 'HOSTING', value: 'GitHub Pages' },
+      {
+        label: 'SOURCE',
+        value: 'github.com/dotanbeck/designer-ai-starter-kit',
+        url: 'https://github.com/dotanbeck/designer-ai-starter-kit',
+      },
+    ],
+    watchUxiLabel: 'Talk page on UXI Live →',
+    watchUxiUrl:
+      'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
+    backLabel: '← Back to the starter kit',
+    lectureLabel: 'Read the full talk →',
+  },
   footer: {
     credits: 'UXI 2026 — Neta + Dotan',
     talkRecording: 'Talk recording →',
@@ -432,6 +407,61 @@ respects its word limit.
     talkTitle:
       'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
     speakersLine: 'Neta Keret · Dotan Beck — Lightricks',
+    journeyLabel: 'THE JOURNEY · FROM VAGUE BRIEF TO TALK',
+    journeyTitle: 'How this kit got built.',
+    journeyIntro:
+      'A 3-week timeline — from one designer’s morning-idea to a shipped product — that explains why this page exists at all.',
+    beats: [
+      {
+        number: '01',
+        headline: 'The idea — one button.',
+        shortLabel: 'Idea',
+        body:
+          'August 2025: Google ships Nano Banana — image quality we hadn’t seen. The promise was clean: *what you imagine, you get.* The catch: only if you know how to ask. The designer move is to make the phrasing disappear. No prompt box. One shutter button. A hunch.',
+        quote: 'כמה מטופש — ככה פשוט.',
+        quoteAttribution: 'Neta',
+        quoteLang: 'he',
+        phase: 'guerrilla',
+      },
+      {
+        number: '02',
+        headline: 'Prototyping the feel.',
+        shortLabel: 'Prototyping',
+        body:
+          'Built in an afternoon. Two birds, one stone: user-testing the experience *and* rehearsing the pitch — walking the hallway with the mock, catching people between meetings. The prototype answered the shape of the experience, not whether the model could hold up.',
+        phase: 'guerrilla',
+      },
+      {
+        number: '03',
+        headline: 'Real photos in. Real results out.',
+        shortLabel: 'Real results',
+        body:
+          'Someone mentions AI Studio. Under an hour later, a working POC: real photos in, real output. Not a simulation. The first pass wasn’t quite there — the model kept altering lighting — but reading the docs together Neta and Dotan found the unlock: positive framing, a self-check step. Those rules became the spine of § 03 on the starter kit.',
+        quote:
+          'זה כבר לא רעיון בראש שלי. זו כבר לא מצגת. זה משהו שעובד.',
+        quoteAttribution: 'Neta',
+        quoteLang: 'he',
+        phase: 'guerrilla',
+      },
+      {
+        number: '04',
+        headline: 'CPO approves.',
+        shortLabel: 'CPO approves',
+        isPivot: true,
+      },
+      {
+        number: '05',
+        headline: 'Guerrilla → real project.',
+        shortLabel: 'Real project',
+        body:
+          'PM assigned, priorities set, validations, data, iteration. Three weeks, total — from that morning-idea to a production build. Few resources. People helping “on the side.” The process looked nothing like the usual — no wireframes, no Figma handoff — but the output was there.',
+        quote:
+          'מהרגע הזה הפרויקט הוא כבר לא פרויקט גרילה — הוא פרויקט מסודר.',
+        quoteAttribution: 'Dotan',
+        quoteLang: 'he',
+        phase: 'product',
+      },
+    ],
     slidesLabel: 'SLIDES',
     slides: [
       { file: 'slide-01.jpg', caption: 'Opening — the photo gag' },
@@ -462,5 +492,6 @@ respects its word limit.
     watchUxiLabel: 'Talk page on UXI Live →',
     watchUxiUrl:
       'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
+    whoLabel: 'Who we are →',
   },
 };
