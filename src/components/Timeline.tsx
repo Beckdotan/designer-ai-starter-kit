@@ -1,54 +1,20 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
-import { SectionHeader } from '@/components/SectionHeader';
-import { useLang } from '@/hooks/useLang';
 import { linkify } from '@/utils/linkify';
-import type { StoryBeat, StoryTakeaway } from '@/content/types';
+import type { StoryBeat } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
 
-export function Story() {
-  const { t } = useLang();
-  const s = t.story;
-
+export function Timeline({ beats }: { beats: StoryBeat[] }) {
   return (
-    <section id="story" className="section bg-bone">
-      <div className="section-inner">
-        <SectionHeader
-          tag={s.tag}
-          meta={s.meta}
-          title={s.title}
-          intro={s.intro}
-        />
-
-        {/* Mobile / sub-md: vertical rail */}
-        <div className="md:hidden">
-          <TimelineVertical beats={s.beats} />
-        </div>
-
-        {/* Desktop / md+: horizontal rail with detail panel */}
-        <div className="hidden md:block">
-          <TimelineHorizontal beats={s.beats} />
-        </div>
-
-        <Takeaways label={s.takeawaysLabel} items={s.takeaways} />
-
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-10%' }}
-          transition={{ duration: 0.4, ease }}
-          className="mt-10 flex md:mt-14"
-        >
-          <a
-            href="#/lecture"
-            className="group inline-flex items-center gap-2 font-mono text-mono-label uppercase text-cobalt underline-offset-4 hover:underline"
-          >
-            {s.readFullLabel}
-          </a>
-        </motion.div>
+    <>
+      <div className="md:hidden">
+        <TimelineVertical beats={beats} />
       </div>
-    </section>
+      <div className="hidden md:block">
+        <TimelineHorizontal beats={beats} />
+      </div>
+    </>
   );
 }
 
@@ -276,57 +242,4 @@ function Quote({ beat, compact = false }: { beat: StoryBeat; compact?: boolean }
       )}
     </figure>
   );
-}
-
-function Takeaways({
-  label,
-  items,
-}: {
-  label: string;
-  items: StoryTakeaway[];
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-10%' }}
-      transition={{ duration: 0.5, ease }}
-      className="mt-20 rounded-2xl border border-chalk bg-paper p-6 shadow-card md:mt-28 md:p-10"
-    >
-      <div className="flex items-center gap-3">
-        <span className="mono-label text-cobalt force-ltr">{label}</span>
-        <span className="hairline" />
-      </div>
-
-      <ul className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-        {items.map((i) => (
-          <li key={i.number} className="border-t border-chalk pt-5">
-            <div className="flex items-baseline gap-3">
-              <span className="font-mono text-mono-body text-cobalt">{i.number}</span>
-              <h4 className="max-w-[22ch] text-display-m font-medium tracking-tight text-ink">
-                {i.headline}
-              </h4>
-            </div>
-            <p className="mt-3 max-w-prose text-body text-graphite">
-              {renderEmphasis(i.body)}
-            </p>
-          </li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
-
-function renderEmphasis(source: string) {
-  const parts = source.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
-      return (
-        <strong key={i} className="font-medium text-ink">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
 }

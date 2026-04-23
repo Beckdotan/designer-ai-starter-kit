@@ -64,7 +64,7 @@ function Featured({ tool }: { tool: Tool }) {
         <span className="force-ltr">{tool.displayUrl}</span>
         <span
           aria-hidden="true"
-          className="inline-block transition-transform duration-200 ease-quart group-hover:translate-x-1 rtl:rotate-180"
+          className="inline-block transition-transform duration-200 ease-quart group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180"
         >
           →
         </span>
@@ -85,7 +85,7 @@ function Supporting({ tool, index }: { tool: Tool; index: number }) {
         href={tool.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group flex h-full flex-col rounded-xl border border-chalk bg-bone p-6 transition-all duration-200 ease-quart hover:-translate-y-0.5 hover:border-cobalt/40 hover:shadow-card"
+        className="group flex h-full flex-col rounded-xl border border-chalk bg-bone p-6 transition-all duration-200 ease-quart hover:-translate-y-0.5 hover:border-cobalt/40 hover:shadow-lift"
       >
         <h4 className="text-display-m font-medium tracking-tight text-ink">{tool.name}</h4>
         <p className="mt-3 flex-1 text-body-s text-graphite">{tool.oneLiner}</p>
@@ -93,7 +93,7 @@ function Supporting({ tool, index }: { tool: Tool; index: number }) {
           <span className="force-ltr">{tool.displayUrl}</span>
           <span
             aria-hidden="true"
-            className="inline-block transition-transform duration-200 ease-quart group-hover:translate-x-1 rtl:rotate-180"
+            className="inline-block transition-transform duration-200 ease-quart group-hover:translate-x-1 rtl:group-hover:-translate-x-1 rtl:rotate-180"
           >
             →
           </span>

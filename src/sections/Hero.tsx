@@ -117,7 +117,7 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 1.05, ease }}
           className="flex items-center justify-start md:justify-end"
         >
-          <ShutterButton label={t.hero.cta} href="#story" tone="light" size="lg" />
+          <ShutterButton label={t.hero.cta} href="#why" tone="light" size="lg" />
         </motion.div>
       </div>
     </section>
