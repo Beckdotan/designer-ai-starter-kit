@@ -19,7 +19,10 @@
 
     <title>You already have what you need — UXI Starter Kit</title>
 
-    <!-- GoatCounter — privacy-friendly pageview counter -->
+    <!-- GoatCounter — privacy-friendly pageview counter.
+         no_onload: SPA mode — disables auto-fire so trackPath() in App.tsx
+         can count every hash route (including direct loads of /#/lecture). -->
+    <script>window.goatcounter = { no_onload: true };</script>
     <script data-goatcounter="https://beckdotan.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
   </head>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useLang } from '@/hooks/useLang';
 import { useHashRoute } from '@/hooks/useHashRoute';
+import { track } from '@/lib/track';
 import type { Lang } from '@/content';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
@@ -125,7 +126,10 @@ export function TopNav() {
         >
           <button
             type="button"
-            onClick={() => setLang('en')}
+            onClick={() => {
+              track('lang-en');
+              setLang('en');
+            }}
             aria-pressed={lang === 'en'}
             className={langClass('en', lang, overHero)}
           >
@@ -139,7 +143,10 @@ export function TopNav() {
           </span>
           <button
             type="button"
-            onClick={() => setLang('he')}
+            onClick={() => {
+              track('lang-he');
+              setLang('he');
+            }}
             aria-pressed={lang === 'he'}
             className={langClass('he', lang, overHero)}
           >
