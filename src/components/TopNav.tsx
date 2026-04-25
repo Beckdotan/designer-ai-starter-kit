@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { useLang } from '@/hooks/useLang';
 import { useHashRoute } from '@/hooks/useHashRoute';
+import type { Lang } from '@/content';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
 
@@ -14,9 +15,10 @@ function toRouteKey(hash: string): Route {
 }
 
 export function TopNav() {
-  const { t } = useLang();
+  const { t, lang, setLang } = useLang();
   const route = toRouteKey(useHashRoute());
   const nav = t.topNav;
+  const lt = t.langToggle;
   const [solid, setSolid] = useState(route !== 'home');
 
   useEffect(() => {
@@ -72,47 +74,78 @@ export function TopNav() {
       }`}
       aria-label="Primary"
     >
-      <div className="mx-auto flex h-full max-w-content items-center justify-start gap-6 px-5 pe-28 md:gap-10 md:px-8 md:pe-40">
-        <a
-          href="#"
-          onClick={goHome}
-          className={`font-mono text-mono-label uppercase tracking-wider underline-offset-4 hover:underline force-ltr transition-colors duration-300 ${
-            overHero ? 'text-bone/85 hover:text-bone' : 'text-ink'
-          }`}
-        >
-          {nav.brand}
-        </a>
+      <div className="mx-auto flex h-full max-w-content items-center justify-between gap-6 px-5 md:px-8">
+        <div className="flex items-center gap-6 md:gap-10">
+          <a
+            href="#"
+            onClick={goHome}
+            className={`font-mono text-mono-label uppercase tracking-wider underline-offset-4 hover:underline force-ltr transition-colors duration-300 ${
+              overHero ? 'text-bone/85 hover:text-bone' : 'text-ink'
+            }`}
+          >
+            {nav.brand}
+          </a>
 
-        <ul className="flex items-center gap-4 md:gap-7">
-          <li>
-            <a
-              href="#why"
-              onClick={goToWhy}
-              aria-current={route === 'home' ? 'page' : undefined}
-              className={linkClass(route === 'home', overHero)}
-            >
-              {nav.links.toolkit}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#/lecture"
-              aria-current={route === 'lecture' ? 'page' : undefined}
-              className={linkClass(route === 'lecture', overHero)}
-            >
-              {nav.links.lecture}
-            </a>
-          </li>
-          <li>
-            <a
-              href="#/who"
-              aria-current={route === 'who' ? 'page' : undefined}
-              className={linkClass(route === 'who', overHero)}
-            >
-              {nav.links.who}
-            </a>
-          </li>
-        </ul>
+          <ul className="flex items-center gap-4 md:gap-7">
+            <li>
+              <a
+                href="#why"
+                onClick={goToWhy}
+                aria-current={route === 'home' ? 'page' : undefined}
+                className={linkClass(route === 'home', overHero)}
+              >
+                {nav.links.toolkit}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#/lecture"
+                aria-current={route === 'lecture' ? 'page' : undefined}
+                className={linkClass(route === 'lecture', overHero)}
+              >
+                {nav.links.lecture}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#/who"
+                aria-current={route === 'who' ? 'page' : undefined}
+                className={linkClass(route === 'who', overHero)}
+              >
+                {nav.links.who}
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div
+          className="flex items-center gap-1.5 font-mono text-mono-label uppercase force-ltr"
+          role="group"
+          aria-label={lt.ariaLabel}
+        >
+          <button
+            type="button"
+            onClick={() => setLang('en')}
+            aria-pressed={lang === 'en'}
+            className={langClass('en', lang, overHero)}
+          >
+            {lt.en}
+          </button>
+          <span
+            aria-hidden="true"
+            className={`select-none ${overHero ? 'text-bone/30' : 'text-graphite/40'}`}
+          >
+            /
+          </span>
+          <button
+            type="button"
+            onClick={() => setLang('he')}
+            aria-pressed={lang === 'he'}
+            className={langClass('he', lang, overHero)}
+          >
+            {lt.he}
+          </button>
+        </div>
       </div>
     </motion.nav>
   );
@@ -133,4 +166,13 @@ function linkClass(active: boolean, overHero: boolean) {
     active ? 'text-cobalt' : 'text-graphite hover:text-ink',
     active ? 'underline decoration-cobalt decoration-[1.5px]' : 'hover:underline',
   ].join(' ');
+}
+
+function langClass(target: Lang, current: Lang, overHero: boolean) {
+  const active = target === current;
+  const base = 'transition-colors duration-300 ease-quart';
+  if (overHero) {
+    return [base, active ? 'text-cobalt-light' : 'text-bone/55 hover:text-bone'].join(' ');
+  }
+  return [base, active ? 'text-cobalt' : 'text-graphite hover:text-ink'].join(' ');
 }

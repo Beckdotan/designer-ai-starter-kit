@@ -31,7 +31,7 @@ export const en: Content = {
   },
   why: {
     tag: '§ 01',
-    meta: 'FROM OUR UXI TALK · 4 IDEAS',
+    meta: '4 KEY IDEAS FROM OUR UXI TALK',
     title: 'Why we built this.',
     intro:
       'Four ideas from our UXI 2026 talk on designing with AI. The rest of this page turns them into tools you can use today.',
@@ -105,7 +105,7 @@ export const en: Content = {
         number: '05',
         title: 'Connect a real API key when you need real responses.',
         body:
-          'While you build, AI Studio uses mock calls so you don\'t burn quota. When you\'re ready to test with real Gemini or Nano Banana output, drop in an API key. Don\'t have one? **Ask someone in your engineering group.** Most companies already have project keys you can borrow for prototyping — no card, no procurement, no waiting.',
+          'While you build, AI Studio uses mock calls so you don\'t burn quota. When you\'re ready to test with real Gemini or Nano Banana output, drop in an API key. Don\'t have one? <b>Ask someone in your engineering group.</b> Most companies already have project keys you can borrow for prototyping — no card, no procurement, no waiting.',
         screenshotAlt: 'Connecting an API key in AI Studio settings',
       },
       {
@@ -336,7 +336,7 @@ Confirm:
 - The user's intent is preserved.`,
     starterPromptTipLabel: 'TIP',
     starterPromptTip:
-      'Want this on tap? Create your own Gemini Gem or custom GPT and paste this block in as the system prompt. You get a one-click prompt enhancer that lives in your sidebar — same nine moves, zero copy-paste.',
+      'Want this on tap? Create your own Gemini Gem or custom GPT and paste this block in as the <code>system prompt</code>. You get a one-click prompt enhancer that lives in your sidebar — same nine moves, zero copy-paste.',
     copyLabel: 'COPY',
     copiedLabel: 'COPIED ✓',
   },
@@ -456,8 +456,6 @@ Confirm:
   },
   footer: {
     credits: 'UXI 2026 — Neta + Dotan',
-    talkRecording: 'Talk recording →',
-    talkRecordingUrl: '#',
     builtWith: 'BUILT WITH CLAUDE CODE · HOSTED ON GITHUB PAGES',
   },
   langToggle: {
@@ -470,6 +468,9 @@ Confirm:
     talkTitle:
       'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
     speakersLine: 'Neta Keret · Dotan Beck — Lightricks',
+    watchKicker: 'TALK RECORDING',
+    watchTitle: 'Watch the talk on UXI Live',
+    watchMeta: 'UXI 2026 · ~20 MIN',
     journeyLabel: 'THE JOURNEY · ONE BUTTON, THREE WEEKS',
     journeyTitle: 'How one button shipped.',
     journeyIntro:

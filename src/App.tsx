@@ -1,4 +1,3 @@
-import { LangToggle } from '@/components/LangToggle';
 import { TopNav } from '@/components/TopNav';
 import { BackToTop } from '@/components/BackToTop';
 import { FlashOverlay } from '@/components/FlashOverlay';
@@ -21,7 +20,6 @@ export default function App() {
       <>
         <FlashOverlay />
         <TopNav />
-        <LangToggle />
         <Lecture />
       </>
     );
@@ -32,7 +30,6 @@ export default function App() {
       <>
         <FlashOverlay />
         <TopNav />
-        <LangToggle />
         <Who />
         <Footer />
       </>
@@ -43,7 +40,6 @@ export default function App() {
     <>
       <FlashOverlay />
       <TopNav />
-      <LangToggle />
       <main>
         <Hero />
         <Why />

@@ -5,15 +5,7 @@ export function Footer() {
   return (
     <footer id="footer" className="bg-ink px-5 py-12 text-bone md:px-8 md:py-20">
       <div className="mx-auto w-full max-w-content">
-        <div className="flex flex-col gap-3 text-body-s md:flex-row md:items-center md:justify-between">
-          <span className="text-bone/85">{t.footer.credits}</span>
-          <a
-            href={t.footer.talkRecordingUrl}
-            className="text-bone/85 underline-offset-4 hover:underline"
-          >
-            {t.footer.talkRecording}
-          </a>
-        </div>
+        <div className="text-body-s text-bone/85">{t.footer.credits}</div>
 
         <div className="my-10 h-px bg-bone/10 md:my-14" />
 

@@ -34,6 +34,42 @@ export function Lecture() {
         </p>
       </motion.header>
 
+      {/* Watch the talk — featured CTA card */}
+      <motion.a
+        href={l.watchUxiUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.15, ease }}
+        className="group mt-12 flex flex-col gap-8 rounded-2xl border border-bone/12 p-6 transition-all duration-200 ease-quart hover:-translate-y-0.5 hover:border-bone/25 hover:shadow-lift md:mt-16 md:flex-row md:items-center md:justify-between md:p-10"
+        style={{ backgroundColor: '#17140F' }}
+      >
+        <div>
+          <div className="flex items-center gap-3">
+            <span className="font-mono text-mono-label uppercase text-cobalt-light force-ltr">
+              {l.watchKicker}
+            </span>
+            <span className="hairline bg-bone/15" />
+          </div>
+          <h2 className="mt-4 max-w-[26ch] text-display-m font-medium tracking-tight text-bone">
+            {l.watchTitle}
+          </h2>
+          <p className="mt-3 font-mono text-mono-label uppercase text-bone/55 force-ltr">
+            {l.watchMeta}
+          </p>
+        </div>
+
+        <div
+          aria-hidden="true"
+          className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-cobalt text-bone transition-transform duration-200 ease-quart group-hover:scale-105 md:h-20 md:w-20"
+        >
+          <svg viewBox="0 0 24 24" className="h-7 w-7 translate-x-[2px] md:h-8 md:w-8" fill="currentColor">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+      </motion.a>
+
       {/* Journey — timeline */}
       <section className="mt-20 md:mt-28">
         <div className="flex items-center gap-3">

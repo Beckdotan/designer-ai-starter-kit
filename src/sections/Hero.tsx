@@ -60,7 +60,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, ease }}
             className="mb-8 inline-flex max-w-full flex-wrap items-center gap-x-3 gap-y-2 rounded-full border border-bone/15 bg-bone/5 px-4 py-2 font-mono text-mono-label text-bone/80 backdrop-blur-md md:mb-10"
-            dir="ltr"
+            dir={t.dir}
           >
             <span>{t.hero.receiptPrefix}</span>
             <span className="text-bone/40">·</span>
