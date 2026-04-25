@@ -34,7 +34,6 @@ These are intentional placeholders — swap them in as assets arrive.
 | `src/content/en.ts` → `services.linkedin` | Real LinkedIn URL |
 | `src/content/en.ts` → `footer.talkRecordingUrl` | Talk recording URL when available |
 | `src/content/en.ts` → `hero.receiptItems` | Honest build-time numbers |
-| `index.html` → GoatCounter script slot | Paste `data-goatcounter` snippet |
 | `src/content/he.ts` | Hebrew translations (scaffold present, English fallback) |
 
 ## Voice
