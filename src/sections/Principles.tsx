@@ -7,6 +7,26 @@ import type { Principle } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
 
+// Render a string with inline <code>…</code> segments as real <code> elements.
+// Real elements inherit the global RTL-isolation rule, fixing bidi flips in Hebrew.
+function renderInlineCode(input: string) {
+  const parts = input.split(/(<code>[^<]*<\/code>)/g);
+  return parts.map((part, i) => {
+    const m = part.match(/^<code>([\s\S]*)<\/code>$/);
+    if (m) {
+      return (
+        <code
+          key={i}
+          className="rounded bg-chalk/70 px-1.5 py-0.5 font-mono text-[0.92em] text-ink"
+        >
+          {m[1]}
+        </code>
+      );
+    }
+    return part;
+  });
+}
+
 export function Principles() {
   const { t } = useLang();
   return (
@@ -103,10 +123,11 @@ function PrincipleCard({
 }
 
 function StarterPromptBlock() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const { copied, copy } = useCopy();
   const reduced = useReducedMotion();
   const p = t.principles;
+  const isRtl = lang === 'he';
 
   return (
     <motion.div
@@ -150,8 +171,16 @@ function StarterPromptBlock() {
       </div>
 
       <p className="mt-6 max-w-prose border-s-2 border-cobalt/40 ps-4 text-body text-graphite">
-        <span className="mono-label me-2 text-cobalt force-ltr">{p.starterPromptTipLabel}</span>
-        {p.starterPromptTip}
+        <span
+          className={
+            isRtl
+              ? 'me-3 font-medium text-cobalt'
+              : 'mono-label me-2 text-cobalt force-ltr'
+          }
+        >
+          {p.starterPromptTipLabel}
+        </span>
+        {renderInlineCode(p.starterPromptTip)}
       </p>
     </motion.div>
   );
