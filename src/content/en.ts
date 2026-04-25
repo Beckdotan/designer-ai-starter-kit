@@ -105,7 +105,7 @@ export const en: Content = {
         number: '05',
         title: 'Connect a real API key when you need real responses.',
         body:
-          'While you build, AI Studio uses mock calls so you don\'t burn quota. When you\'re ready to test with real Gemini or Nano Banana output, drop in an API key. Don\'t have one? **Ask someone in your engineering group.** Most companies already have project keys you can borrow for prototyping — no card, no procurement, no waiting.',
+          'While you build, AI Studio uses mock calls so you don\'t burn quota. When you\'re ready to test with real Gemini or Nano Banana output, drop in an API key. Don\'t have one? <b>Ask someone in your engineering group.</b> Most companies already have project keys you can borrow for prototyping — no card, no procurement, no waiting.',
         screenshotAlt: 'Connecting an API key in AI Studio settings',
       },
       {
