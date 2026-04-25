@@ -82,7 +82,7 @@ export const he: Content = {
         number: '02',
         title: 'תנו בריף ל-Gem שלנו, קבלו פרומפט מדויק יותר.',
         body:
-          'פתחו את ה-[prompt-helper Gem](https://gemini.google.com/gem/15DZwOjGR4ihh14Dg-MnVOKpswkW8KRiw?usp=sharing) ותארו מה אתם רוצים לבנות במשפט או שניים — דאטה מוקאפ זה בסדר ("דאשבורד שמראה את 7 האימונים האחרונים שלי ככרטיסיות"). ה-Gem יראיין אתכם ויכתוב פרומפט מובנה שמיישם את כל תשעת הכללים מ-§ 03.',
+          'פתחו את ה-[prompt-helper Gem](https://gemini.google.com/gem/15DZwOjGR4ihh14Dg-MnVOKpswkW8KRiw?usp=sharing) ותארו מה אתם רוצים לבנות במשפט או שניים — אפשר להשתמש במידע פיקטיבי ("דאשבורד שמראה את 7 האימונים האחרונים שלי ככרטיסיות"). ה-Gem יראיין אתכם ויכתוב פרומפט מובנה שמיישם את כל תשעת הכללים מ-§ 03.',
         screenshotAlt: 'ה-Prompt-helper Gem הופך רעיון גולמי לפרומפט מובנה',
         screenshot: 'step-02.mp4',
       },
