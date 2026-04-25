@@ -31,7 +31,7 @@ export const en: Content = {
   },
   why: {
     tag: '§ 01',
-    meta: 'FROM OUR UXI TALK · 4 IDEAS',
+    meta: '4 KEY IDEAS FROM OUR UXI TALK',
     title: 'Why we built this.',
     intro:
       'Four ideas from our UXI 2026 talk on designing with AI. The rest of this page turns them into tools you can use today.',
@@ -456,7 +456,7 @@ Confirm:
   },
   footer: {
     credits: 'UXI 2026 — Neta + Dotan',
-    builtWith: 'BUILT WITH CLAUDE CODE',
+    builtWith: 'BUILT WITH CLAUDE CODE · HOSTED ON GITHUB PAGES',
   },
   langToggle: {
     en: 'EN',

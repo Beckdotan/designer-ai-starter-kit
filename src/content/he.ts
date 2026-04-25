@@ -33,7 +33,7 @@ export const he: Content = {
   },
   why: {
     tag: '§ 01',
-    meta: 'מההרצאה שלנו ב-UXI · 4 רעיונות',
+    meta: '4 רעיונות מרכזיים מההרצאה שלנו ב-UXI',
     title: 'למה בנינו את זה.',
     intro:
       'ארבעה רעיונות מההרצאה שלנו ב-UXI 2026 על עיצוב עם AI. שאר הדף הופך אותם לכלים שאפשר להשתמש בהם כבר היום.',
@@ -320,10 +320,10 @@ export const he: Content = {
     watchUxiUrl: en.who.watchUxiUrl,
     lectureLabel: 'לקרוא את כל ההרצאה →',
   },
-    footer: {
-      credits: 'UXI 2026 — נטע + דותן',
-      builtWith: 'נבנה עם CLAUDE CODE',
-    },
+  footer: {
+    credits: 'UXI 2026 — נטע + דותן',
+    builtWith: 'נבנה עם CLAUDE CODE · מאוחסן ב-GITHUB PAGES',
+  },
   langToggle: {
     en: 'EN',
     he: 'עב',
