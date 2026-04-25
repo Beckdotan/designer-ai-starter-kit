@@ -409,7 +409,7 @@ Confirm:
   who: {
     tag: '§ WHO',
     meta: 'BUILDERS · TALKERS',
-    title: 'We gave the talk. We built this page. Same afternoon.',
+    title: 'We gave the talk. We built this page.',
     intro:
       'Two product people at Lightricks, betting that the designer’s job now includes actually building the thing. This page is the proof of work.',
     talkTitle:
@@ -452,7 +452,6 @@ Confirm:
     watchUxiLabel: 'Talk page on UXI Live →',
     watchUxiUrl:
       'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
-    backLabel: '← Back to the starter kit',
     lectureLabel: 'Read the full talk →',
   },
   footer: {
@@ -467,15 +466,14 @@ Confirm:
     ariaLabel: 'Toggle language',
   },
   lecture: {
-    backLabel: '← Back to the starter kit',
     kicker: 'UXI 2026 — THE TALK',
     talkTitle:
       'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
     speakersLine: 'Neta Keret · Dotan Beck — Lightricks',
-    journeyLabel: 'THE JOURNEY · FROM VAGUE BRIEF TO TALK',
-    journeyTitle: 'How this kit got built.',
+    journeyLabel: 'THE JOURNEY · ONE BUTTON, THREE WEEKS',
+    journeyTitle: 'How one button shipped.',
     journeyIntro:
-      'A 3-week timeline — from one designer’s morning-idea to a shipped product — that explains why this page exists at all.',
+      'Three weeks from a designer’s morning idea to a shipped feature — through an afternoon prototype, an under-an-hour POC, and an under-the-table cross-functional sprint.',
     beats: [
       {
         number: '01',
@@ -490,20 +488,22 @@ Confirm:
       },
       {
         number: '02',
-        headline: 'Prototyping the feel.',
+        headline: 'Figma won’t cut it.',
         shortLabel: 'Prototyping',
         body:
-          'Built in an afternoon. Two birds, one stone: user-testing the experience *and* rehearsing the pitch — walking the hallway with the mock, catching people between meetings. The prototype answered the shape of the experience, not whether the model could hold up.',
+          'A Figma mock can show a button — it can’t show the model. And the experience *is* the model’s response. So the designer built the prototype directly in AI Studio. An afternoon’s work. Then walked the hallway with the live mock — two birds, one stone: user-testing the experience *and* rehearsing the pitch, catching people between meetings.',
+        quote: 'רואים את הפוטנציאל, אבל זה עדיין מרגיש כמו דמו.',
+        quoteAttribution: 'Neta',
+        quoteLang: 'he',
         phase: 'guerrilla',
       },
       {
         number: '03',
-        headline: 'Real photos in. Real results out.',
-        shortLabel: 'Real results',
+        headline: 'Real API. Real problems.',
+        shortLabel: 'Real API',
         body:
-          'Someone mentions AI Studio. Under an hour later, a working POC: real photos in, real output. Not a simulation. The first pass wasn’t quite there — the model kept altering lighting — but reading the docs together Neta and Dotan found the unlock: positive framing, a self-check step. Those rules became the spine of § 03 on the starter kit.',
-        quote:
-          'זה כבר לא רעיון בראש שלי. זו כבר לא מצגת. זה משהו שעובד.',
+          'Mock runs won’t ship a feature. Plugged in an API key, ran real photos through Nano Banana — and the output drifted: lighting changed, identities softened, the model wandered. That’s where Dotan came in. The designers had hit a prompt-quality wall. Together they read the docs, ran prompt-engineering sessions, and rewrote the prompt round by round — positive framing, a self-check step, the right rule in the right section. The model started holding.',
+        quote: 'ופתאום — זה כבר לא ״רעיון צד״. זה ממש עובד.',
         quoteAttribution: 'Neta',
         quoteLang: 'he',
         phase: 'guerrilla',
@@ -550,9 +550,9 @@ Confirm:
       'Google shipped a new image model: Nano Banana. Quality and consistency we hadn’t seen. The promise was clean: *what you imagine, you get — if you know what and how to ask.* That clause is the problem. The moment the interface is a text box, outcomes are bound by how well the user can phrase their wish. Users know what they want; they don’t know how to phrase it — and they don’t want to, every time they take a photo.',
       'As a designer, that was the opportunity. Make the phrasing disappear from the user’s view. What if the entire UI is one button? A shutter button. As stupid as it is simple. I had the flow clear in my head — the feel, the feedback, the whole thing. But how do you convince anyone with just a button? It’s not a feature. It’s an experience. And experiences are hard to pass through words.',
       'So I built the experience. Prototype in an afternoon. Walked the hallway with it — two birds one stone: user testing *and* pitch rehearsal. Someone mentioned AI Studio. Under an hour later: a working POC with real photos in and real results out. No simulation. Real.',
-      'Dotan joined. The prototype wasn’t silly — it worked. But the team had hit a wall on prompt quality. We reframed: the designers would write the prompts, I’d teach the rules. We read the docs together. The fix that had blocked them: *don’t change the lighting* was failing; *keep the lighting and colors identical to the original* worked. Positive framing. We repeated the rule in the right section of the prompt, asked the model to self-check against its rules before answering, and the output changed. Those rules became the spine of § 03 on this page.',
+      'Dotan joined. The prototype wasn’t silly — it worked. But the team had hit a wall on prompt quality. We reframed: the designers would write the prompts, I’d teach the rules. We read the docs together. The fix that had blocked them: *don’t change the lighting* was failing; *keep the lighting and colors identical to the original* worked. Positive framing. We repeated the rule in the right section of the prompt, asked the model to self-check against its rules before answering, and the output changed. Those rules became the spine of § 03 in the toolkit.',
       'What happened next looked nothing like our usual design process. No wireframes. No Figma handoff. No handoff at all. But a working build got approved and moved into real product cycles — PM, validations, data, iteration. Two to three weeks. Few resources. Under-the-table help. An idea that surfaced one morning shipped as a product.',
-      'The takeaway, for us: the designer’s role expands. Not just define and design — build, test, and validate. Prompt engineering becomes part of the craft. And the good news is we already have most of the tools: user understanding, product thinking, working with teams. The rest, we learn. That’s the rest of this page.',
+      'The takeaway, for us: the designer’s role expands. Not just define and design — build, test, and validate. Prompt engineering becomes part of the craft. And the good news is we already have most of the tools: user understanding, product thinking, working with teams. The rest, we learn. That’s what the toolkit is for.',
     ],
     watchUxiLabel: 'Talk page on UXI Live →',
     watchUxiUrl:

@@ -156,7 +156,6 @@ export type Content = {
     credits: BuildCredit[];
     watchUxiLabel: string;
     watchUxiUrl: string;
-    backLabel: string;
     lectureLabel: string;
   };
   footer: {
@@ -171,7 +170,6 @@ export type Content = {
     ariaLabel: string;
   };
   lecture: {
-    backLabel: string;
     kicker: string;
     talkTitle: string;
     speakersLine: string;

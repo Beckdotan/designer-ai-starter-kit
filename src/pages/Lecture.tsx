@@ -17,22 +17,10 @@ export function Lecture() {
 
   return (
     <main className="mx-auto min-h-screen max-w-content px-5 pb-24 pt-24 md:px-8 md:pt-32">
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.hash = '';
-        }}
-        className="inline-flex items-center gap-2 font-mono text-mono-label uppercase text-graphite underline-offset-4 hover:text-ink hover:underline"
-      >
-        {l.backLabel}
-      </a>
-
       <motion.header
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease }}
-        className="mt-12 md:mt-20"
       >
         <div className="flex items-center gap-3">
           <span className="mono-label text-cobalt force-ltr">{l.kicker}</span>
@@ -132,16 +120,6 @@ export function Lecture() {
           className="font-mono text-mono-label uppercase text-graphite underline-offset-4 hover:text-ink hover:underline"
         >
           {l.whoLabel}
-        </a>
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.hash = '';
-          }}
-          className="font-mono text-mono-label uppercase text-graphite underline-offset-4 hover:text-ink hover:underline"
-        >
-          {l.backLabel}
         </a>
       </section>
     </main>
