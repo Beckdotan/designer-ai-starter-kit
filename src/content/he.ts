@@ -334,7 +334,7 @@ export const he: Content = {
     talkTitle: 'מעצבים שמובילים מוצר: פרודקט גרילה בעידן ה-Vibe Coding',
     speakersLine: 'נטע קרט · דותן בק — Lightricks',
     watchKicker: 'הקלטת ההרצאה',
-    watchTitle: 'לצפייה בהרצאה ב-UXI Live',
+    watchTitle: 'לצפייה בהרצאה ב־UXI Live',
     watchMeta: 'UXI 2026 · ~20 דק׳',
     journeyLabel: 'המסע · כפתור אחד, שלושה שבועות',
     journeyTitle: 'איך כפתור אחד הגיע לפרודקשן.',
