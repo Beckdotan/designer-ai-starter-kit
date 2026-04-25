@@ -320,10 +320,10 @@ export const he: Content = {
     watchUxiUrl: en.who.watchUxiUrl,
     lectureLabel: 'לקרוא את כל ההרצאה →',
   },
-  footer: {
-    credits: 'UXI 2026 — נטע + דותן',
-    builtWith: 'נבנה עם CLAUDE CODE · מאוחסן ב-GITHUB PAGES',
-  },
+    footer: {
+      credits: 'UXI 2026 — נטע + דותן',
+      builtWith: 'נבנה עם CLAUDE CODE',
+    },
   langToggle: {
     en: 'EN',
     he: 'עב',

@@ -456,9 +456,7 @@ Confirm:
   },
   footer: {
     credits: 'UXI 2026 — Neta + Dotan',
-    talkRecording: 'Talk recording →',
-    talkRecordingUrl: '#',
-    builtWith: 'BUILT WITH CLAUDE CODE · HOSTED ON GITHUB PAGES',
+    builtWith: 'BUILT WITH CLAUDE CODE',
   },
   langToggle: {
     en: 'EN',
@@ -470,6 +468,9 @@ Confirm:
     talkTitle:
       'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
     speakersLine: 'Neta Keret · Dotan Beck — Lightricks',
+    watchKicker: 'TALK RECORDING',
+    watchTitle: 'Watch the talk on UXI Live',
+    watchMeta: 'UXI 2026 · ~20 MIN',
     journeyLabel: 'THE JOURNEY · ONE BUTTON, THREE WEEKS',
     journeyTitle: 'How one button shipped.',
     journeyIntro:
