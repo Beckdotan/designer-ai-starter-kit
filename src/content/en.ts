@@ -34,7 +34,7 @@ export const en: Content = {
     meta: '4 KEY IDEAS FROM OUR UXI TALK',
     title: 'Why we built this.',
     intro:
-      'Four ideas from our UXI 2026 talk on designing with AI. The rest of this page turns them into tools you can use today.',
+      'Four ideas from our UXI 2026 talk on designing with AI. The rest of this website turns them into tools you can use today.',
     takeaways: [
       {
         number: '01',
@@ -58,7 +58,7 @@ export const en: Content = {
         number: '04',
         headline: 'We already have most of the tools.',
         body:
-          'Deep user understanding, product thinking, working with teams. The rest — like prompt engineering — can be learned. That’s what the rest of this page is for.',
+          'Deep user understanding, product thinking, working with teams. The rest — like prompt engineering — can be learned. That’s what the rest of this website is for.',
       },
     ],
   },
@@ -198,7 +198,7 @@ export const en: Content = {
     ],
     starterPromptLabel: 'PROMPT ENHANCER — ALL 9, IN ONE PASTE',
     starterPromptNote:
-      'Don’t want to memorise the nine moves above? This system prompt applies every one of them for you. Paste it into any chat — Gemini, ChatGPT, Claude, anywhere. The model will reply asking for your rough prompt. Send it as the next message, and you get back a sharper version with every rule on this page applied. No edits to the block needed.',
+      'Don’t want to memorise the nine moves above? This system prompt applies every one of them for you. Paste it into any chat — Gemini, ChatGPT, Claude, anywhere. The model will reply asking for your rough prompt. Send it as the next message, and you get back a sharper version with every rule on this website applied. No edits to the block needed.',
     starterPromptTask: 'All nine moves, applied automatically.',
     starterPrompt: `# ROLE
 You are a senior prompt engineer. You have rewritten
@@ -409,9 +409,9 @@ Confirm:
   who: {
     tag: '§ WHO',
     meta: 'BUILDERS · TALKERS',
-    title: 'We gave the talk. We built this page.',
+    title: 'We gave the talk. We built this website.',
     intro:
-      'Two product people at Lightricks, betting that the designer’s job now includes actually building the thing. This page is the proof of work.',
+      'Two product people at Lightricks, betting that the designer’s job now includes actually building the thing. This website is the proof of work.',
     talkTitle:
       'Designers Leading Product: Product Guerrilla in the Vibe Coding Era',
     list: [
@@ -429,7 +429,7 @@ Confirm:
         name: 'Dotan Beck',
         role: 'AI Labs Team Lead & LLM Engineer — Lightricks',
         bio:
-          'Drives product-tech strategy for generative AI across Lightricks, shipping at the scale of millions of users. Dotan joined the project as the prompt engineer, teaching the designers to write the rules — and vibe-coded this page in an afternoon.',
+          'Drives product-tech strategy for generative AI across Lightricks, shipping at the scale of millions of users. Dotan joined the project as the prompt engineer, teaching the designers to write the rules — and vibe-coded this website in an afternoon.',
         initials: 'DB',
         imageUrl: '/designer-ai-starter-kit/who/dotan.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/dotanbeck/',
@@ -449,7 +449,7 @@ Confirm:
         url: 'https://github.com/dotanbeck/designer-ai-starter-kit',
       },
     ],
-    watchUxiLabel: 'Talk page on UXI Live →',
+    watchUxiLabel: 'Talk website on UXI Live →',
     watchUxiUrl:
       'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
     lectureLabel: 'Read the full talk →',
@@ -555,7 +555,7 @@ Confirm:
       'What happened next looked nothing like our usual design process. No wireframes. No Figma handoff. No handoff at all. But a working build got approved and moved into real product cycles — PM, validations, data, iteration. Two to three weeks. Few resources. Under-the-table help. An idea that surfaced one morning shipped as a product.',
       'The takeaway, for us: the designer’s role expands. Not just define and design — build, test, and validate. Prompt engineering becomes part of the craft. And the good news is we already have most of the tools: user understanding, product thinking, working with teams. The rest, we learn. That’s what the toolkit is for.',
     ],
-    watchUxiLabel: 'Talk page on UXI Live →',
+    watchUxiLabel: 'Talk website on UXI Live →',
     watchUxiUrl:
       'https://uxilive.co.il/2026/product-guerrilla-in-vibe-code-era-dotan-neta/',
     whoLabel: 'Who we are →',
