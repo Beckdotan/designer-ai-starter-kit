@@ -148,6 +148,11 @@ function StarterPromptBlock() {
           {copied ? p.copiedLabel : p.copyLabel}
         </button>
       </div>
+
+      <p className="mt-6 max-w-prose border-s-2 border-cobalt/40 ps-4 text-body text-graphite">
+        <span className="mono-label me-2 text-cobalt force-ltr">{p.starterPromptTipLabel}</span>
+        {p.starterPromptTip}
+      </p>
     </motion.div>
   );
 }

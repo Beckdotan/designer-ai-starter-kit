@@ -74,7 +74,12 @@ export function Hero() {
             ))}
             <span className="text-bone/40">·</span>
             <span>{t.hero.receiptSuffix}</span>
-            <a href="#tools" className="text-cobalt-light underline-offset-4 hover:underline">
+            <a
+              href="https://claude.com/product/claude-code"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cobalt-light underline-offset-4 hover:underline"
+            >
               {t.hero.receiptLinkLabel}
             </a>
           </motion.div>

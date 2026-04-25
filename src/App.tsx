@@ -7,7 +7,6 @@ import { Why } from '@/sections/Why';
 import { Poc } from '@/sections/Poc';
 import { Principles } from '@/sections/Principles';
 import { Models } from '@/sections/Models';
-import { Tools } from '@/sections/Tools';
 import { Services } from '@/sections/Services';
 import { Footer } from '@/sections/Footer';
 import { Lecture } from '@/pages/Lecture';
@@ -51,7 +50,6 @@ export default function App() {
         <Poc />
         <Principles />
         <Models />
-        <Tools />
         <Services />
       </main>
       <Footer />
