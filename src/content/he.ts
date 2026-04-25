@@ -64,7 +64,7 @@ export const he: Content = {
   },
   poc: {
     tag: '§ 02',
-    meta: '5 שלבים — שעה בערך',
+    meta: '6 שלבים — שעה בערך',
     title: 'בנו POC ראשון בתוך שעה.',
     intro: en.poc.intro, // TODO: HE
     steps: en.poc.steps, // TODO: HE (links stay LTR via the renderer)
@@ -75,10 +75,12 @@ export const he: Content = {
     title: 'יסודות כתיבת פרומפטים.',
     intro: en.principles.intro, // TODO: HE
     items: en.principles.items, // TODO: HE (snippets stay LTR)
-    starterPromptLabel: 'פרומפט פתיחה',
+    starterPromptLabel: 'משדרג פרומפטים',
     starterPromptNote: en.principles.starterPromptNote, // TODO: HE
     starterPromptTask: en.principles.starterPromptTask, // TODO: HE
     starterPrompt: en.principles.starterPrompt, // Prompt stays in English for AI Studio
+    starterPromptTipLabel: 'טיפ',
+    starterPromptTip: en.principles.starterPromptTip, // TODO: HE
     copyLabel: 'העתק',
     copiedLabel: 'הועתק ✓',
   },
@@ -89,16 +91,8 @@ export const he: Content = {
     intro: en.models.intro, // TODO: HE
     items: en.models.items, // TODO: HE
   },
-  tools: {
-    tag: '§ 05',
-    meta: '1 מוביל + 5 משלימים',
-    title: 'Vibe coding: כלים לבנייה מהירה.',
-    intro: en.tools.intro, // TODO: HE
-    featured: en.tools.featured, // TODO: HE
-    supporting: en.tools.supporting, // TODO: HE
-  },
   services: {
-    tag: '§ 06',
+    tag: '§ 05',
     meta: 'דותן בק — סולו',
     title: 'הרצאות וסדנאות על שילוב AI במוצר ובעבודה היומיומית.',
     intro: en.services.intro, // TODO: HE
@@ -123,6 +117,7 @@ export const he: Content = {
         bio:
           'מובילה את עיצוב המוצר ב-Facetune, עם דגש על חוויות הוליסטיות ומבוססות דאטה. נטע התחילה את הפרויקט שהפך להרצאה — רעיון־בוקר שהפך למוצר פרודקשן בתוך שלושה שבועות.',
         initials: 'נק',
+        imageUrl: '/designer-ai-starter-kit/who/neta.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/netakeret/',
         linkedinLabel: 'LINKEDIN ↗',
       },
@@ -132,6 +127,7 @@ export const he: Content = {
         bio:
           'מוביל אסטרטגיה מוצרית-טכנולוגית ל-Generative AI ברחבי Lightricks, במיליוני משתמשים. דותן הצטרף לפרויקט כ-prompt engineer, לימד את המעצבות לכתוב את הכללים — וויב־קוד את הדף הזה באחר צהריים.',
         initials: 'דב',
+        imageUrl: '/designer-ai-starter-kit/who/dotan.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/dotanbeck/',
         linkedinLabel: 'LINKEDIN ↗',
       },

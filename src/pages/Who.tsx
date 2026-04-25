@@ -111,12 +111,21 @@ function SpeakerBlock({ speaker, index }: { speaker: Speaker; index: number }) {
       transition={{ duration: 0.5, delay: index * 0.08, ease }}
       className="card flex flex-col gap-6"
     >
-      <div
-        aria-hidden="true"
-        className="flex h-32 w-32 items-center justify-center rounded-lg bg-ink font-mono text-[36px] font-medium text-bone md:h-40 md:w-40 md:text-[44px]"
-      >
-        {speaker.initials}
-      </div>
+      {speaker.imageUrl ? (
+        <img
+          src={speaker.imageUrl}
+          alt={speaker.name}
+          loading="lazy"
+          className="h-32 w-32 flex-shrink-0 rounded-lg object-cover object-top md:h-40 md:w-40"
+        />
+      ) : (
+        <div
+          aria-hidden="true"
+          className="flex h-32 w-32 items-center justify-center rounded-lg bg-ink font-mono text-[36px] font-medium text-bone md:h-40 md:w-40 md:text-[44px]"
+        >
+          {speaker.initials}
+        </div>
+      )}
 
       <div>
         <div className="text-display-m font-medium tracking-tight text-ink">

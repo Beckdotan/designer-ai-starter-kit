@@ -91,13 +91,12 @@ export function Services() {
 }
 
 function HeadshotPlaceholder() {
-  // Swap to <img src="/designer-ai-starter-kit/dotan.jpg" ... /> once headshot is delivered.
   return (
-    <div
-      className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-cobalt to-cobalt-ink font-mono text-[22px] font-medium text-bone md:h-20 md:w-20 md:text-[28px]"
-      aria-label="Dotan Beck headshot placeholder"
-    >
-      DB
-    </div>
+    <img
+      src="/designer-ai-starter-kit/who/dotan.jpg"
+      alt="Dotan Beck"
+      loading="lazy"
+      className="h-16 w-16 flex-shrink-0 rounded-lg object-cover object-top md:h-20 md:w-20"
+    />
   );
 }

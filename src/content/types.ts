@@ -3,6 +3,7 @@ export type PocStep = {
   title: string;
   body: string;
   screenshotAlt: string;
+  screenshot?: string;
 };
 
 export type Principle = {
@@ -18,15 +19,6 @@ export type ModelGuide = {
   description: string;
   url: string;
   displayUrl: string;
-};
-
-export type Tool = {
-  name: string;
-  oneLiner: string;
-  url: string;
-  displayUrl: string;
-  featured?: boolean;
-  terminal?: string;
 };
 
 export type ServiceOffering = {
@@ -58,6 +50,7 @@ export type Speaker = {
   role: string;
   bio: string;
   initials: string;
+  imageUrl?: string;
   linkedinUrl?: string;
   linkedinLabel?: string;
   emailUrl?: string;
@@ -127,6 +120,8 @@ export type Content = {
     starterPromptNote: string;
     starterPromptTask: string;
     starterPrompt: string;
+    starterPromptTipLabel: string;
+    starterPromptTip: string;
     copyLabel: string;
     copiedLabel: string;
   };
@@ -136,14 +131,6 @@ export type Content = {
     title: string;
     intro: string;
     items: ModelGuide[];
-  };
-  tools: {
-    tag: string;
-    meta: string;
-    title: string;
-    intro: string;
-    featured: Tool;
-    supporting: Tool[];
   };
   services: {
     tag: string;

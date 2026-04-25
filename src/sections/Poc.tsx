@@ -26,6 +26,10 @@ export function Poc() {
   );
 }
 
+function isVideo(filename: string) {
+  return /\.(mp4|webm|mov)$/i.test(filename);
+}
+
 function Step({ step, last }: { step: PocStep; index: number; last: boolean }) {
   return (
     <motion.li
@@ -56,19 +60,29 @@ function Step({ step, last }: { step: PocStep; index: number; last: boolean }) {
         </h3>
         <p className="mt-4 max-w-prose text-body text-graphite">{linkify(step.body)}</p>
 
-        {/* Screenshot placeholder — swap /public/poc-step-0N.png to replace */}
-        <div
-          className="mt-8 aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-xl border border-chalk bg-paper shadow-card"
-          role="img"
-          aria-label={step.screenshotAlt}
-        >
-          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-paper via-bone to-chalk">
-            <div className="text-center">
-              <div className="mono-label text-smoke">SCREENSHOT · STEP {step.number}</div>
-              <div className="mt-2 text-body-s text-smoke">{step.screenshotAlt}</div>
-            </div>
+        {step.screenshot && (
+          <div className="mt-8 aspect-[16/9] w-full max-w-3xl overflow-hidden rounded-xl border border-chalk bg-paper shadow-card">
+            {isVideo(step.screenshot) ? (
+              <video
+                src={`/designer-ai-starter-kit/poc/${step.screenshot}`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-label={step.screenshotAlt}
+                className="h-full w-full object-contain"
+              />
+            ) : (
+              <img
+                src={`/designer-ai-starter-kit/poc/${step.screenshot}`}
+                alt={step.screenshotAlt}
+                loading="lazy"
+                className="h-full w-full object-contain"
+              />
+            )}
           </div>
-        </div>
+        )}
       </div>
     </motion.li>
   );

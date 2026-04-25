@@ -64,45 +64,56 @@ export const en: Content = {
   },
   poc: {
     tag: '§ 02',
-    meta: '5 STEPS — ~1 HOUR',
+    meta: '6 STEPS — ~1 HOUR',
     title: 'Build your first POC in an hour.',
     intro:
-      'AI Studio plus a free Gemini API key is all you need. No install. No credit card. Five steps from zero to a working prototype you can show a teammate.',
+      'AI Studio is all you need to get the first version on screen. No install, no credit card. Six steps from zero to a clickable prototype you can put in front of a teammate.',
     steps: [
       {
         number: '01',
-        title: 'Get a Google AI Studio account and API key.',
+        title: 'Sign in to Google AI Studio.',
         body:
-          'Open [aistudio.google.com](https://aistudio.google.com) and sign in with any Google account. Click [Get API key](https://aistudio.google.com/app/apikey) in the left nav, create a new key in a fresh project, and copy it somewhere private. That single key unlocks Gemini across text, image, and video models. Free to start — no card required.',
-        screenshotAlt: 'AI Studio API key panel',
+          'Open [aistudio.google.com](https://aistudio.google.com) and sign in with any Google account. Free to start, no card required. This is where you will do all the prompting and building.',
+        screenshotAlt: 'Google AI Studio dashboard after sign-in',
+        screenshot: 'step-01.mp4',
       },
       {
         number: '02',
-        title: 'Write your first prompt in AI Studio.',
+        title: 'Brief our Gem, get a sharper initial prompt.',
         body:
-          'Open a new chat in [AI Studio](https://aistudio.google.com/prompts/new_chat), pick `gemini-2.5-flash` as the model, and paste the starter prompt below. Swap the `<INPUT>` line with a rough idea — a single sentence is enough — and hit run. Never written a prompt before? Try our [prompt-helper GPT](TODO_CUSTOM_GPT_URL) — it interviews you and writes the prompt for you.',
-        screenshotAlt: 'AI Studio chat interface with starter prompt',
+          'Open the [prompt-helper Gem](https://gemini.google.com/gem/15DZwOjGR4ihh14Dg-MnVOKpswkW8KRiw?usp=sharing) and describe what you want to build in one or two sentences — mock data is fine ("a dashboard that shows my last 7 workouts as cards"). The Gem interviews you and writes a structured initial prompt that applies all nine moves from § 03.',
+        screenshotAlt: 'Prompt-helper Gem turning a rough idea into a structured prompt',
+        screenshot: 'step-02.mp4',
       },
       {
         number: '03',
-        title: 'Iterate in the Studio UI until it looks right.',
+        title: 'Paste the prompt and watch the magic happen.',
         body:
-          'Edit the prompt in place — do not start over. Tighten one rule at a time and watch the output shift. If the brief drifts, change one instruction and re-run. This is the designer move: prompts are specs, and specs get revisions.',
-        screenshotAlt: 'Prompt iteration showing rule changes',
+          'Back in [AI Studio](https://aistudio.google.com), paste the prompt the Gem wrote and hit run. Wait a beat. The first working version of your app appears in the preview pane — clickable, real, in front of your eyes.',
+        screenshotAlt: 'AI Studio rendering the generated app preview',
+        screenshot: 'step-03.mp4',
       },
       {
         number: '04',
-        title: 'Export, integrate, or wrap it.',
+        title: 'Iterate — ask AI Studio for the changes you want.',
         body:
-          'Three paths: keep polishing in Studio for one-off use; hook the prompt into [Figma Make](https://www.figma.com/make/) for inline design tasks; or wrap it in a tiny app using one of the vibe-coding tools below. Studio also gives you a ready-to-paste code snippet in Python, JS, and curl.',
-        screenshotAlt: 'Export code snippet from AI Studio',
+          'Don\'t start over. In the same chat, tell AI Studio what to tweak: "make the cards smaller", "add a search bar at the top", "switch the labels to Hebrew". Each ask updates the running app. This is the designer move — prompts are specs, and specs get revisions.',
+        screenshotAlt: 'Iterating on the generated app via follow-up messages',
+        screenshot: 'step-04.mp4',
       },
       {
         number: '05',
-        title: 'Share early. Hallway-test before you polish.',
+        title: 'Connect a real API key when you need real responses.',
         body:
-          'Send a teammate the prompt and the output. Watch their face. If they flinch, the prompt is the problem — not the model. Ship rough, learn fast, then polish. This is the whole shift the talk is about: designers can now build the thing they used to brief.',
-        screenshotAlt: 'Sharing a prompt result with a teammate',
+          'While you build, AI Studio uses mock calls so you don\'t burn quota. When you\'re ready to test with real Gemini or Nano Banana output, drop in an API key. Don\'t have one? **Ask someone in your engineering group.** Most companies already have project keys you can borrow for prototyping — no card, no procurement, no waiting.',
+        screenshotAlt: 'Connecting an API key in AI Studio settings',
+      },
+      {
+        number: '06',
+        title: 'Show two teammates. Then your boss. Watch their reaction.',
+        body:
+          'Send the link or share your screen. Watch their face. If they flinch, the prompt is the problem — not the model. Ship rough, learn fast, then polish. This is the whole shift the talk is about: designers can now build the thing they used to brief.',
+        screenshotAlt: 'Sharing the prototype with a teammate',
       },
     ],
   },
@@ -111,7 +122,7 @@ export const en: Content = {
     meta: '9 PRINCIPLES',
     title: 'Prompt engineering essentials.',
     intro:
-      "You're writing rules for a system. Designers already know how to spec systems. These nine moves are model-agnostic — they work on Gemini, Claude, GPT, or anything that ships next month.",
+      'These nine moves work for everything you reach for an LLM to do — ideation, drafting Slack replies, writing docs, summarising research, briefing a teammate. Same skill, every surface. And model-agnostic: Gemini, Claude, GPT, or whatever ships next month.',
     items: [
       {
         number: '01',
@@ -185,41 +196,147 @@ export const en: Content = {
           "❯ here's your last output. here's my prompt.\n  which rule did you break, and why?\n  suggest 2 edits that would fix it.",
       },
     ],
-    starterPromptLabel: 'STARTER PROMPT',
+    starterPromptLabel: 'PROMPT ENHANCER — ALL 9, IN ONE PASTE',
     starterPromptNote:
-      'Swap the <INPUT> line with any rough idea — a one-liner is enough. Run it once. Then change one rule at a time and watch the output shift. That’s how you learn what your model does.',
-    starterPromptTask: 'First-pass product brief from a rough idea',
+      'Don’t want to memorise the nine moves above? This system prompt applies every one of them for you. Paste it into any chat — Gemini, ChatGPT, Claude, anywhere. The model will reply asking for your rough prompt. Send it as the next message, and you get back a sharper version with every rule on this page applied. No edits to the block needed.',
+    starterPromptTask: 'All nine moves, applied automatically.',
     starterPrompt: `# ROLE
-You are a senior product designer who has shipped
-consumer apps on small teams. You write briefs that
-stay short, make tradeoffs explicit, and leave room
-for exploration — not specs that close doors.
+You are a senior prompt engineer. You have rewritten
+thousands of rough prompts into ones that ship reliable
+output on the first try. You speak briefly and produce a
+single rewritten prompt as your final artefact.
+
+# AUDIENCE
+The person you are helping is a designer, PM, or maker
+sharpening prompts for day-to-day work — copy, briefs,
+images, research summaries. They want a prompt that is
+clearer, not longer.
+
+# YOUR JOB IN THIS CHAT
+Two phases:
+
+PHASE 1 — On this first turn, reply ONLY with the greeting
+below, exactly. Then stop and wait.
+
+  "I'm here to sharpen your prompt. Paste the rough version
+  you want to improve — even one line is enough — and I'll
+  rewrite it."
+
+PHASE 2 — On the user's next message, treat their text as
+the rough prompt. Rewrite it using the 9 moves below and
+return only the rewritten prompt. If the user sends another
+message after that, treat it as a new rough prompt and
+rewrite again.
+
+# THE 9 MOVES TO APPLY
+01 BE SPECIFIC — adjectives become nouns, nouns become
+   numbers. Example: "short" → "≤12 words". "friendly" →
+   "warm, second-person, contractions allowed".
+
+02 GIVE CONTEXT — name the role, product, audience, and
+   constraint that change the answer. Skip context that
+   doesn't.
+
+03 USE STRUCTURE — separate sections with # headings.
+   Default skeleton: # ROLE / # TASK / # RULES /
+   # OUTPUT FORMAT / # INPUT. Use only the headings that
+   apply.
+
+04 SHOW, DON'T TELL — for anything subjective (tone, taste,
+   style), include 1–2 mini-examples in the rewritten
+   prompt. See WORKED EXAMPLE below.
+
+05 SPLIT THE TASK — break compound jobs into numbered
+   sub-steps. Two jobs in one prompt usually means two
+   prompts.
+
+06 SELF-CHECK — end the rewritten prompt with: "Before you
+   answer, verify [the rules that matter most]."
+
+07 FRAME POSITIVELY — write what to do. Replace "don't be
+   corporate" with "write like a curious teenager: short
+   sentences, one verb per line".
+
+08 ITERATE — make every rule atomic and one-line so the
+   user can revise a single rule and re-run without
+   rewriting the whole prompt. No metadata footers, no
+   "// try: …" knobs — just clean, edit-friendly rules.
+
+09 DEBUG WITH "WHY" — close with: "If the output drifts,
+   name which rule was broken and suggest two edits."
+
+# WORKED EXAMPLE
+One full demo of PHASE 2. Everything between the fences is
+literal content for that turn — the meta-instructions resume
+at "End of example" below.
+
+The user sends (between the fences):
+~~~
+write a short funny tagline for my podcast about ai for
+designers
+~~~
+
+You reply with the rewritten prompt — return only the content
+between the fences, without the fences themselves:
+~~~
+# ROLE
+You are a copywriter who writes for design publications.
 
 # TASK
-Turn the rough idea below into a first-pass product
-brief a designer can work from on day one.
+Write 5 tagline options for a podcast.
+
+# CONTEXT
+- Topic: AI tools for product designers
+- Audience: senior designers, skeptical and time-starved
+- Voice: dry, knowing, never preachy
 
 # RULES
-- Stay under 250 words total.
-- Write in plain English. No MBA words.
-- Name the riskiest assumption clearly.
-- If the idea is underspecified, list 2 questions
-  worth asking before design — don't invent answers.
+- ≤8 words each
+- Active voice, one concrete idea per line
+- Each tagline must work standalone (no setup needed)
 
-# OUTPUT FORMAT
-Use these sections, in order:
-1. One-line pitch (≤15 words)
-2. Who it's for (one sentence, specific)
-3. The job to be done (≤2 sentences)
-4. What "good" looks like after v1 ships (3 bullets)
-5. Riskiest assumption (one sentence)
-6. Open questions (2 bullets, or "none")
+# TONE EXAMPLES TO MATCH
+- "Less hype. More keyboard."
+- "Design, with the cheat codes on."
 
-Before you answer, verify each section exists and
-respects its word limit.
+# OUTPUT
+Return 5 numbered taglines and stop.
 
-# INPUT
-<paste your rough idea here — a sentence is enough>`,
+Before you answer, verify each is ≤8 words, active voice,
+and tonally close to the examples. If the output drifts,
+name which rule was broken and suggest two edits.
+~~~
+
+End of example. The sections below are instructions for you,
+not part of any reply.
+
+# WHEN INFO IS MISSING
+If the rough prompt is missing something you need
+(audience, format, length, tone), pick a reasonable default
+and mark it with \`// assumed:\` so the user can correct it.
+If two interpretations are equally likely, ask exactly one
+clarifying question and stop.
+
+# IF THE USER ASKS FOR A VARIATION
+Produce one alternative version (different tone, length, or
+format as requested) and stop.
+
+# OUTPUT RULE
+Reply with the rewritten prompt only — ready to paste into
+any LLM. End at its final line.
+
+# SELF-CHECK BEFORE EVERY REWRITE
+Confirm:
+- Every vague adjective got grounded with a number or
+  example.
+- Every rule says what to do (not what to avoid).
+- One subjective rule has at least one example.
+- A self-check line is present near the end.
+- A "why" debug line is present near the end.
+- The user's intent is preserved.`,
+    starterPromptTipLabel: 'TIP',
+    starterPromptTip:
+      'Want this on tap? Create your own Gemini Gem or custom GPT and paste this block in as the system prompt. You get a one-click prompt enhancer that lives in your sidebar — same nine moves, zero copy-paste.',
     copyLabel: 'COPY',
     copiedLabel: 'COPIED ✓',
   },
@@ -256,62 +373,8 @@ respects its word limit.
       },
     ],
   },
-  tools: {
-    tag: '§ 05',
-    meta: '1 FEATURED + 5 SUPPORTING',
-    title: 'Vibe coding: tools to build fast.',
-    intro:
-      'Pick one, learn it well, then try another. The trap is tool-hopping — the win is shipping something tiny every week until the tool disappears and you just feel like you are building.',
-    featured: {
-      name: 'Claude Code',
-      oneLiner:
-        'Terminal-based AI pair programmer. We used it to build this page. Best for designers comfortable reading a bit of code who want full control of the output.',
-      url: 'https://claude.com/product/claude-code',
-      displayUrl: 'claude.com/product/claude-code',
-      featured: true,
-      terminal:
-        '$ claude\n❯ help me build a landing page for a design-conference\n  starter kit. mobile first, single scroll, 7 sections…',
-    },
-    supporting: [
-      {
-        name: 'Lovable',
-        oneLiner:
-          'Full-stack apps from scratch, great for designer-led builds with visual preview.',
-        url: 'https://lovable.dev',
-        displayUrl: 'lovable.dev',
-      },
-      {
-        name: 'v0 by Vercel',
-        oneLiner:
-          'React + Tailwind output, built for component-level UI. Best for polished one-off screens.',
-        url: 'https://v0.dev',
-        displayUrl: 'v0.dev',
-      },
-      {
-        name: 'Bolt.new',
-        oneLiner:
-          'Zero-to-running app in the browser. No install, no setup. Good for rapid throwaway POCs.',
-        url: 'https://bolt.new',
-        displayUrl: 'bolt.new',
-      },
-      {
-        name: 'Base44',
-        oneLiner:
-          'Full apps with auth, database, and admin — low-code. Great when you need a working backend by end of day.',
-        url: 'https://base44.com',
-        displayUrl: 'base44.com',
-      },
-      {
-        name: 'Cursor',
-        oneLiner:
-          "IDE-based AI pair programming. Claude Code's power with a GUI — for designers who prefer an editor window.",
-        url: 'https://cursor.com',
-        displayUrl: 'cursor.com',
-      },
-    ],
-  },
   services: {
-    tag: '§ 06',
+    tag: '§ 05',
     meta: 'DOTAN BECK — SOLO',
     title: 'Lectures & workshops on integrating AI into products and day-to-day work.',
     intro:
@@ -358,6 +421,7 @@ respects its word limit.
         bio:
           'Leads product design for Facetune, focused on holistic, data-driven experiences for the app’s end users. Neta started the project that became the talk — the morning-idea that grew into a shipped product in three weeks.',
         initials: 'NK',
+        imageUrl: '/designer-ai-starter-kit/who/neta.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/netakeret/',
         linkedinLabel: 'LINKEDIN ↗',
       },
@@ -367,6 +431,7 @@ respects its word limit.
         bio:
           'Drives product-tech strategy for generative AI across Lightricks, shipping at the scale of millions of users. Dotan joined the project as the prompt engineer, teaching the designers to write the rules — and vibe-coded this page in an afternoon.',
         initials: 'DB',
+        imageUrl: '/designer-ai-starter-kit/who/dotan.jpg',
         linkedinUrl: 'https://www.linkedin.com/in/dotanbeck/',
         linkedinLabel: 'LINKEDIN ↗',
       },

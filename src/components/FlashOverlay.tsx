@@ -16,7 +16,7 @@ export function FlashOverlay() {
 
   useEffect(() => {
     if (!active) return;
-    const id = window.setTimeout(() => setActive(false), 180);
+    const id = window.setTimeout(() => setActive(false), 360);
     return () => window.clearTimeout(id);
   }, [active]);
 
@@ -26,9 +26,13 @@ export function FlashOverlay() {
         <motion.div
           key="flash"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.9 }}
+          animate={{ opacity: [0, 0.95, 0.08, 0.8, 0] }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.18, ease: [0.2, 0.7, 0.2, 1] }}
+          transition={{
+            duration: 0.34,
+            times: [0, 0.18, 0.42, 0.6, 1],
+            ease: [0.2, 0.7, 0.2, 1],
+          }}
           className="pointer-events-none fixed inset-0 z-[100] bg-bone"
           aria-hidden="true"
         />
