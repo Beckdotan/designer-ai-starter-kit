@@ -22,6 +22,10 @@ Push to `main`. The `Deploy to GitHub Pages` workflow builds and publishes autom
 
 The Vite `base` is `/designer-ai-starter-kit/` — change it in `vite.config.ts` if the repo is renamed.
 
+## Analytics
+
+Pageviews are tracked with GoatCounter (privacy-first, no cookies). Dashboard: <https://beckdotan.goatcounter.com>. The tracker is wired in `index.html`.
+
 ## Content swaps before launch
 
 These are intentional placeholders — swap them in as assets arrive.
