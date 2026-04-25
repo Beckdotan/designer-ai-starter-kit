@@ -15,22 +15,10 @@ export function Who() {
 
   return (
     <main className="mx-auto min-h-screen max-w-content px-5 pb-24 pt-24 md:px-8 md:pt-32">
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          window.location.hash = '';
-        }}
-        className="inline-flex items-center gap-2 font-mono text-mono-label uppercase text-graphite underline-offset-4 hover:text-ink hover:underline"
-      >
-        {w.backLabel}
-      </a>
-
       <motion.header
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease }}
-        className="mt-12 md:mt-20"
       >
         <div className="flex items-center gap-3">
           <span className="mono-label text-cobalt force-ltr">{w.tag}</span>
@@ -73,16 +61,6 @@ export function Who() {
 
       {/* Footer nav */}
       <section className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-chalk pt-10 md:mt-28">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            window.location.hash = '';
-          }}
-          className="font-mono text-mono-label uppercase text-graphite underline-offset-4 hover:text-ink hover:underline"
-        >
-          {w.backLabel}
-        </a>
         <a
           href="#/lecture"
           className="font-mono text-mono-label uppercase text-cobalt underline-offset-4 hover:underline"

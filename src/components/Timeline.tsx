@@ -138,11 +138,9 @@ function TimelineHorizontal({ beats }: { beats: StoryBeat[] }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.22, ease }}
-              className="grid grid-cols-1 gap-8 lg:grid-cols-[auto,1fr]"
+              className="grid grid-cols-1 gap-3 lg:grid-cols-[auto,1fr] lg:gap-8"
             >
-              <div className="flex items-start gap-4 lg:w-[200px]">
-                <span className="font-mono text-mono-body text-cobalt">{active.number}</span>
-              </div>
+              <span className="font-mono text-mono-body text-cobalt">{active.number}</span>
 
               <div>
                 <h3 className="max-w-[34ch] text-display-m font-medium tracking-tight text-ink">
