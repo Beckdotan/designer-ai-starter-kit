@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/SectionHeader';
 import { useLang } from '@/hooks/useLang';
+import { track } from '@/lib/track';
 import type { ModelGuide } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
+
+// Stable analytics key from a model label. "Nano Banana" → "nano-banana".
+function docsSlug(label: string): string {
+  return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'unknown';
+}
 
 export function Models() {
   const { t } = useLang();
@@ -39,6 +45,7 @@ function Card({ item, index }: { item: ModelGuide; index: number }) {
         href={item.url}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => track(`outbound-docs-${docsSlug(item.label)}`)}
         className="group flex h-full flex-col rounded-xl border border-chalk bg-bone p-6 transition-all duration-200 ease-quart hover:-translate-y-0.5 hover:border-cobalt/40 hover:shadow-lift md:p-8"
       >
         <div className="flex items-center justify-between">

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useLang } from '@/hooks/useLang';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { ShutterButton } from '@/components/ShutterButton';
+import { track } from '@/lib/track';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
 
@@ -122,7 +123,13 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 1.05, ease }}
           className="flex items-center justify-start md:justify-end"
         >
-          <ShutterButton label={t.hero.cta} href="#why" tone="light" size="lg" />
+          <ShutterButton
+            label={t.hero.cta}
+            href="#why"
+            tone="light"
+            size="lg"
+            onPress={() => track('cta-press-to-start')}
+          />
         </motion.div>
       </div>
     </section>

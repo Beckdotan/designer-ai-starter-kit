@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useLang } from '@/hooks/useLang';
 import { Timeline } from '@/components/Timeline';
+import { track } from '@/lib/track';
 import type { LectureSlide } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
@@ -39,6 +40,7 @@ export function Lecture() {
         href={l.watchUxiUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => track('cta-watch-talk')}
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.15, ease }}
@@ -147,6 +149,7 @@ export function Lecture() {
           href={l.watchUxiUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => track('cta-watch-talk-outro')}
           className="font-mono text-mono-label uppercase text-cobalt underline-offset-4 hover:underline"
         >
           {l.watchUxiLabel}

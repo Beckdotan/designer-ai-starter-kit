@@ -3,6 +3,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { useLang } from '@/hooks/useLang';
 import { useCopy } from '@/hooks/useCopy';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { track } from '@/lib/track';
 import type { Principle } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
@@ -110,7 +111,10 @@ function PrincipleCard({
 
           <button
             type="button"
-            onClick={() => copy(principle.snippet)}
+            onClick={() => {
+              copy(principle.snippet);
+              track(`copy-principle-${principle.number}`);
+            }}
             aria-label={`Copy snippet for ${principle.name}`}
             className="absolute end-2 top-2 rounded-md bg-ink/60 px-2.5 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-bone/80 backdrop-blur-sm transition-all duration-200 ease-quart hover:bg-cobalt hover:text-bone md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100"
           >
@@ -162,7 +166,10 @@ function StarterPromptBlock() {
         </pre>
         <button
           type="button"
-          onClick={() => copy(p.starterPrompt)}
+          onClick={() => {
+            copy(p.starterPrompt);
+            track('copy-starter-prompt');
+          }}
           aria-label="Copy starter prompt"
           className="absolute end-3 top-3 rounded-md bg-ink/70 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.12em] text-bone transition-all duration-200 ease-quart hover:bg-cobalt"
         >

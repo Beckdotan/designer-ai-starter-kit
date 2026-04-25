@@ -11,9 +11,17 @@ import { Footer } from '@/sections/Footer';
 import { Lecture } from '@/pages/Lecture';
 import { Who } from '@/pages/Who';
 import { useHashRoute } from '@/hooks/useHashRoute';
+import { trackPath } from '@/lib/track';
+import { useEffect } from 'react';
 
 export default function App() {
   const route = useHashRoute();
+
+  useEffect(() => {
+    // SPA route changes are virtual pageviews — surfaces /lecture and /who
+    // separately in the GoatCounter Pages panel.
+    trackPath(route === '' ? '/' : route);
+  }, [route]);
 
   if (route === '/lecture') {
     return (

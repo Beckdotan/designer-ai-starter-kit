@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useLang } from '@/hooks/useLang';
+import { track } from '@/lib/track';
 import type { Speaker, BuildCredit } from '@/content/types';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
+
+// Stable analytics key from a speaker's full name. "Neta Keret" → "neta",
+// "Dotan Beck" → "dotan". Strips any non-ASCII just in case.
+function speakerSlug(name: string): string {
+  return name.split(' ')[0].toLowerCase().replace(/[^a-z]/g, '') || 'unknown';
+}
 
 export function Who() {
   const { t } = useLang();
@@ -120,6 +127,7 @@ function SpeakerBlock({ speaker, index }: { speaker: Speaker; index: number }) {
               href={speaker.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => track(`outbound-linkedin-${speakerSlug(speaker.name)}-who`)}
               className="font-mono text-mono-label uppercase text-cobalt underline-offset-4 hover:underline force-ltr"
             >
               {speaker.linkedinLabel ?? 'LINKEDIN ↗'}

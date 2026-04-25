@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { SectionHeader } from '@/components/SectionHeader';
 import { useLang } from '@/hooks/useLang';
+import { track } from '@/lib/track';
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
 
@@ -74,6 +75,7 @@ export function Services() {
             href={s.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('outbound-linkedin-dotan-home')}
             className="btn-outline group w-full md:w-auto"
           >
             <span>{s.cta}</span>
