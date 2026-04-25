@@ -75,7 +75,7 @@ export function Services() {
             href={s.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => track('outbound-linkedin')}
+            onClick={() => track('outbound-linkedin-dotan-home')}
             className="btn-outline group w-full md:w-auto"
           >
             <span>{s.cta}</span>
