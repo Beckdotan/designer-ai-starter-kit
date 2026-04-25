@@ -336,7 +336,7 @@ Confirm:
 - The user's intent is preserved.`,
     starterPromptTipLabel: 'TIP',
     starterPromptTip:
-      'Want this on tap? Create your own Gemini Gem or custom GPT and paste this block in as the system prompt. You get a one-click prompt enhancer that lives in your sidebar — same nine moves, zero copy-paste.',
+      'Want this on tap? Create your own Gemini Gem or custom GPT and paste this block in as the <code>system prompt</code>. You get a one-click prompt enhancer that lives in your sidebar — same nine moves, zero copy-paste.',
     copyLabel: 'COPY',
     copiedLabel: 'COPIED ✓',
   },

@@ -204,7 +204,7 @@ export const he: Content = {
     starterPrompt: en.principles.starterPrompt, // Prompt stays in English for AI Studio
     starterPromptTipLabel: 'טיפ',
     starterPromptTip:
-      'רוצים את זה תמיד זמין? צרו Gemini Gem או GPT משלכם והדביקו את הבלוק הזה כ-system prompt. תקבלו משדרג פרומפטים בלחיצה אחת שחי לכם בסיידבר — אותם תשעה מהלכים, אפס קופי-פייסט.',
+      'רוצים את זה תמיד זמין? צרו Gemini Gem או GPT משלכם והדביקו את הבלוק הזה בתור <code>system prompt</code>. תקבלו משדרג פרומפטים בלחיצה אחת שחי לכם בסיידבר — אותם תשעה מהלכים, אפס קופי-פייסט.',
     copyLabel: 'העתק',
     copiedLabel: 'הועתק ✓',
   },
