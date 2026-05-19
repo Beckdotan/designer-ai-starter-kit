@@ -171,16 +171,12 @@ export type Content = {
     kicker: string;
     talkTitle: string;
     speakersLine: string;
-    watchKicker: string;
-    watchTitle: string;
-    watchMeta: string;
     journeyLabel: string;
     journeyTitle: string;
     journeyIntro: string;
     beats: StoryBeat[];
     slidesLabel: string;
     slides: LectureSlide[];
-    slidesPlaceholder: string;
     transcriptLabel: string;
     transcriptParagraphs: string[];
     watchUxiLabel: string;

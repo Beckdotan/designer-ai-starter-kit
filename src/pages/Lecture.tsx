@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useCallback, useEffect, useState } from 'react';
 import { useLang } from '@/hooks/useLang';
 import { Timeline } from '@/components/Timeline';
 import { track } from '@/lib/track';
@@ -9,8 +9,10 @@ const ease = [0.2, 0.7, 0.2, 1] as const;
 const BASE = '/designer-ai-starter-kit';
 
 export function Lecture() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const l = t.lecture;
+  const isRTL = lang === 'he';
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -34,43 +36,6 @@ export function Lecture() {
           {l.speakersLine}
         </p>
       </motion.header>
-
-      {/* Watch the talk — featured CTA card */}
-      <motion.a
-        href={l.watchUxiUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={() => track('cta-watch-talk')}
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.15, ease }}
-        className="group mt-12 flex flex-col gap-8 rounded-2xl border border-bone/12 p-6 transition-all duration-200 ease-quart hover:-translate-y-0.5 hover:border-bone/25 hover:shadow-lift md:mt-16 md:flex-row md:items-center md:justify-between md:p-10"
-        style={{ backgroundColor: '#17140F' }}
-      >
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-mono-label uppercase text-cobalt-light force-ltr">
-              {l.watchKicker}
-            </span>
-            <span className="hairline bg-bone/15" />
-          </div>
-          <h2 className="mt-4 max-w-[26ch] text-display-m font-medium tracking-tight text-bone">
-            {l.watchTitle}
-          </h2>
-          <p className="mt-3 font-mono text-mono-label uppercase text-bone/55 force-ltr">
-            {l.watchMeta}
-          </p>
-        </div>
-
-        <div
-          aria-hidden="true"
-          className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-cobalt text-bone transition-transform duration-200 ease-quart group-hover:scale-105 md:h-20 md:w-20"
-        >
-          <svg viewBox="0 0 24 24" className="h-7 w-7 translate-x-[2px] md:h-8 md:w-8" fill="currentColor">
-            <path d="M8 5v14l11-7z" />
-          </svg>
-        </div>
-      </motion.a>
 
       {/* Journey — timeline */}
       <section className="mt-20 md:mt-28">
@@ -111,14 +76,23 @@ export function Lecture() {
 
         <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
           {l.slides.map((s, i) => (
-            <SlideCard key={s.file} slide={s} index={i} />
+            <SlideCard
+              key={s.file}
+              slide={s}
+              index={i}
+              onOpen={() => setLightboxIndex(i)}
+            />
           ))}
         </ul>
-
-        <p className="mt-6 font-mono text-mono-label uppercase text-smoke">
-          {l.slidesPlaceholder}
-        </p>
       </section>
+
+      <SlideLightbox
+        slides={l.slides}
+        index={lightboxIndex}
+        onClose={() => setLightboxIndex(null)}
+        onIndexChange={setLightboxIndex}
+        isRTL={isRTL}
+      />
 
       {/* Transcript */}
       <section className="mt-20 md:mt-28">
@@ -165,7 +139,15 @@ export function Lecture() {
   );
 }
 
-function SlideCard({ slide, index }: { slide: LectureSlide; index: number }) {
+function SlideCard({
+  slide,
+  index,
+  onOpen,
+}: {
+  slide: LectureSlide;
+  index: number;
+  onOpen: () => void;
+}) {
   const src = `${BASE}/lecture/${slide.file}`;
 
   return (
@@ -176,7 +158,12 @@ function SlideCard({ slide, index }: { slide: LectureSlide; index: number }) {
       transition={{ duration: 0.4, delay: (index % 3) * 0.05, ease }}
       className="overflow-hidden rounded-xl border border-chalk bg-paper shadow-card"
     >
-      <div className="relative aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-paper via-bone to-chalk">
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`Open slide ${index + 1}`}
+        className="group relative block aspect-[16/9] w-full overflow-hidden bg-gradient-to-br from-paper via-bone to-chalk focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt focus-visible:ring-offset-2"
+      >
         <img
           src={src}
           alt={slide.caption}
@@ -184,15 +171,135 @@ function SlideCard({ slide, index }: { slide: LectureSlide; index: number }) {
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).style.display = 'none';
           }}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-quart group-hover:scale-[1.02]"
         />
-        <span className="pointer-events-none absolute inset-0 grid place-items-center font-mono text-mono-label uppercase text-smoke">
-          {slide.file}
-        </span>
-      </div>
-      <div className="p-4 md:p-5">
-        <p className="text-body-s text-graphite">{slide.caption}</p>
-      </div>
+      </button>
     </motion.li>
+  );
+}
+
+function SlideLightbox({
+  slides,
+  index,
+  onClose,
+  onIndexChange,
+  isRTL,
+}: {
+  slides: LectureSlide[];
+  index: number | null;
+  onClose: () => void;
+  onIndexChange: (i: number) => void;
+  isRTL: boolean;
+}) {
+  const open = index !== null;
+  const total = slides.length;
+
+  const prev = useCallback(() => {
+    if (index === null || index <= 0) return;
+    onIndexChange(index - 1);
+  }, [index, onIndexChange]);
+
+  const next = useCallback(() => {
+    if (index === null || index >= total - 1) return;
+    onIndexChange(index + 1);
+  }, [index, onIndexChange, total]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowLeft') (isRTL ? next : prev)();
+      else if (e.key === 'ArrowRight') (isRTL ? prev : next)();
+    };
+    window.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open, onClose, prev, next, isRTL]);
+
+  return (
+    <AnimatePresence>
+      {open && index !== null && (
+        <motion.div
+          key="slide-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Slide ${index + 1} of ${total}`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease }}
+          onClick={onClose}
+          className="fixed inset-0 z-[90] grid place-items-center bg-ink/92 px-4 py-6"
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            aria-label="Close"
+            className="absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-bone/10 text-bone transition-colors duration-200 hover:bg-bone/20 md:right-6 md:top-6"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+
+          {index > 0 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                prev();
+              }}
+              aria-label="Previous slide"
+              className={`absolute top-1/2 z-10 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-bone text-ink shadow-lift ring-1 ring-ink/10 transition-all duration-200 ease-quart hover:scale-105 hover:bg-cobalt hover:text-bone md:h-16 md:w-16 ${isRTL ? 'right-3 md:right-8' : 'left-3 md:left-8'}`}
+            >
+              <svg viewBox="0 0 24 24" className="h-7 w-7 md:h-8 md:w-8" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d={isRTL ? 'M9 6l6 6-6 6' : 'M15 18l-6-6 6-6'} />
+              </svg>
+            </button>
+          )}
+
+          {index < total - 1 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                next();
+              }}
+              aria-label="Next slide"
+              className={`absolute top-1/2 z-10 grid h-14 w-14 -translate-y-1/2 place-items-center rounded-full bg-bone text-ink shadow-lift ring-1 ring-ink/10 transition-all duration-200 ease-quart hover:scale-105 hover:bg-cobalt hover:text-bone md:h-16 md:w-16 ${isRTL ? 'left-3 md:left-8' : 'right-3 md:right-8'}`}
+            >
+              <svg viewBox="0 0 24 24" className="h-7 w-7 md:h-8 md:w-8" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d={isRTL ? 'M15 18l-6-6 6-6' : 'M9 6l6 6-6 6'} />
+              </svg>
+            </button>
+          )}
+
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.img
+              key={slides[index].file}
+              src={`${BASE}/lecture/${slides[index].file}`}
+              alt={slides[index].caption}
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.18, ease }}
+              className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-lift"
+            />
+          </AnimatePresence>
+
+          <span className="absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-mono-label uppercase text-bone/60 force-ltr">
+            {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
+          </span>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
