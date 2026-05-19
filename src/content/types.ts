@@ -60,6 +60,7 @@ export type Speaker = {
 export type LectureSlide = {
   file: string;
   caption: string;
+  video?: string;
 };
 
 export type BuildCredit = {

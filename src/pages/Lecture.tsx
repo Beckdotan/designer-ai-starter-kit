@@ -173,6 +173,18 @@ function SlideCard({
           }}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 ease-quart group-hover:scale-[1.02]"
         />
+        {slide.video && (
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 grid place-items-center"
+          >
+            <span className="grid h-14 w-14 place-items-center rounded-full bg-ink/70 text-bone shadow-lift backdrop-blur-sm transition-transform duration-200 ease-quart group-hover:scale-110">
+              <svg viewBox="0 0 24 24" className="h-6 w-6 translate-x-[2px]" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </span>
+          </span>
+        )}
       </button>
     </motion.li>
   );
@@ -282,17 +294,34 @@ function SlideLightbox({
           )}
 
           <AnimatePresence mode="wait" initial={false}>
-            <motion.img
-              key={slides[index].file}
-              src={`${BASE}/lecture/${slides[index].file}`}
-              alt={slides[index].caption}
-              onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, scale: 0.98 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.18, ease }}
-              className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-lift"
-            />
+            {slides[index].video ? (
+              <motion.video
+                key={slides[index].video}
+                src={`${BASE}/lecture/${slides[index].video}`}
+                poster={`${BASE}/lecture/${slides[index].file}`}
+                controls
+                autoPlay
+                playsInline
+                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.18, ease }}
+                className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-lift"
+              />
+            ) : (
+              <motion.img
+                key={slides[index].file}
+                src={`${BASE}/lecture/${slides[index].file}`}
+                alt={slides[index].caption}
+                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.18, ease }}
+                className="max-h-[88vh] max-w-[92vw] rounded-lg object-contain shadow-lift"
+              />
+            )}
           </AnimatePresence>
 
           <span className="absolute bottom-4 left-1/2 -translate-x-1/2 font-mono text-mono-label uppercase text-bone/60 force-ltr">
