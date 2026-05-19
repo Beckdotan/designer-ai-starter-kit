@@ -541,7 +541,7 @@ Confirm:
       { file: 'slide-12.jpg', caption: 'Diagram — problem → solution → shutter button' },
       { file: 'slide-13.jpg', caption: 'Ta-da!' },
       { file: 'slide-14.jpg', caption: '“OK… so now who picks this up?”' },
-      { file: 'slide-15.jpg', caption: 'Hudsucker Proxy — the old stonecutter' },
+      { file: 'slide-15.jpg', caption: 'Hudsucker Proxy — the old stonecutter', video: 'slide-15.mp4' },
       { file: 'slide-16.jpg', caption: '“You know, for kids” — circle on a paper bag' },
       { file: 'slide-17.jpg', caption: 'Gemini — “give me a different pose”' },
       { file: 'slide-18.jpg', caption: 'AI Studio — the iPad prototype' },
@@ -556,7 +556,7 @@ Confirm:
       { file: 'slide-27.jpg', caption: '01 — My abilities change' },
       { file: 'slide-28.jpg', caption: '02 — Knowing the org, working in teams' },
       { file: 'slide-29.jpg', caption: '03 — A working product beats words' },
-      { file: 'slide-30.jpg', caption: 'Closing — back to Hudsucker' },
+      { file: 'slide-30.jpg', caption: 'Closing — back to Hudsucker', video: 'slide-30.mp4' },
     ],
     transcriptLabel: 'TRANSCRIPT — TIGHTENED',
     transcriptParagraphs: [
